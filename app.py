@@ -15,7 +15,39 @@ app = Flask(__name__)
 @app.route("/test")
 def home():
     return "Padel app funcionando 🚀"
+@app.route("/crear_pago")
+def crear_pago():
+    preference_data = {
+        "items": [
+            {
+                "title": "Reserva Padel",
+                "quantity": 1,
+                "unit_price": 1000
+            }
+        ],
+        "back_urls": {
+            "success": "https://padel-9bk4.onrender.com/success",
+            "failure": "https://padel-9bk4.onrender.com/failure",
+            "pending": "https://padel-9bk4.onrender.com/pending"
+    },
+        "auto_return": "approved"
+    }
 
+    preference_response = sdk.preference().create(preference_data)
+    preference = preference_response["response"]
+
+    return redirect(preference["init_point"])
+@app.route("/success")
+def success():
+    return "Pago aprobado ✅"
+
+@app.route("/failure")
+def failure():
+    return "Pago rechazado ❌"
+
+@app.route("/pending")
+def pending():
+    return "Pago pendiente ⏳"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB = os.path.join(BASE_DIR, "padel.db")
 app.secret_key = "padel37_secret_key_cambiar_si_queres"
