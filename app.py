@@ -2,7 +2,10 @@ from flask import Flask, request, redirect, render_template_string, session
 import sqlite3
 from datetime import datetime
 import urllib.parse
-import os
+import os 
+import mercadopago
+MP_ACCESS_TOKEN = os.getenv("MP_ACCESS_TOKEN")
+sdk = mercadopago.SDK(MP_ACCESS_TOKEN)
 import json
 import requests
 from markupsafe import escape
