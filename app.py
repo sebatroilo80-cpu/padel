@@ -9,7 +9,7 @@ from markupsafe import escape
 from functools import wraps
 
 app = Flask(__name__)
-@app.route("/")
+@app.route("/test")
 def home():
     return "Padel app funcionando 🚀"
 
