@@ -38,7 +38,7 @@ MP_ACCESS_TOKEN = "APP_USR-3703014412541433-032419-8324ea40fcfa6d67ecdd36fcf03fd
 MP_PUBLIC_KEY = "APP_USR-363b213c-9926-4f7b-9cd1-3008a5b01e3a"
 
 # URL pública real cuando subas la app (ej: https://padel37.onrender.com)
-PUBLIC_BASE_URL = "http://127.0.0.1:5000"
+PUBLIC_BASE_URL = "https://padel-9bk4.onrender.com"
 
 BASE_URL_MP = "https://api.mercadopago.com"
 
