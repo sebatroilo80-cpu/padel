@@ -9,6 +9,9 @@ from markupsafe import escape
 from functools import wraps
 
 app = Flask(__name__)
+@app.route("/")
+def home():
+    return "Padel app funcionando 🚀"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB = os.path.join(BASE_DIR, "padel.db")
