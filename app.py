@@ -12,7 +12,7 @@ from markupsafe import escape
 from functools import wraps
 
 app = Flask(__name__)
-@app.route("/test")
+@app.route("/")
 def home():
     return "Padel app funcionando 🚀"
 @app.route("/crear_pago")
@@ -25,13 +25,7 @@ def crear_pago():
                 "unit_price": 1000
             }
         ],
-        "back_urls": {
-            "success": "https://padel-9bk4.onrender.com/success",
-            "failure": "https://padel-9bk4.onrender.com/failure",
-            "pending": "https://padel-9bk4.onrender.com/pending"
-    },
-        "auto_return": "approved"
-    }
+        }
 
     preference_response = sdk.preference().create(preference_data)
     preference = preference_response["response"]
