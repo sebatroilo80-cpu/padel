@@ -12,9 +12,6 @@ from markupsafe import escape
 from functools import wraps
 
 app = Flask(__name__)
-@app.route("/")
-def home():
-    return "Padel app funcionando 🚀"
 @app.route("/crear_pago")
 def crear_pago():
     preference_data = {
